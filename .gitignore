@@ -1,13 +1,55 @@
-.htaccess
-/config.php
-admin/config.php
+#Ignore all
+*.*
+*
 
-!index.html
+#exclude directory structure
+!addons/
+addons/*
 
-download/
-image/data/
-image/cache/
-system/cache/
-system/logs/
+!addons/everypay/
+!addons/everypay/**
 
-system/storage/
+!payments/
+!payments/everypay.php
+payments/*
+
+!skins/
+skins/*
+
+!skins/basic/
+skins/basic/*
+
+!skins/basic/admin/
+skins/basic/admin/*
+
+!skins/basic/admin/addons/
+skins/basic/admin/addons/*
+
+!skins/basic/admin/addons/everypay/
+!skins/basic/admin/addons/everypay/**
+
+
+!skins/basic/admin/views/
+skins/basic/admin/views/*
+
+!skins/basic/admin/views/payments/
+skins/basic/admin/views/payments/*
+
+!skins/basic/admin/views/payments/components/
+skins/basic/admin/views/payments/components/*
+
+!skins/basic/admin/views/payments/components/cc_processors/
+!skins/basic/admin/views/payments/components/cc_processors/everypay.tpl
+skins/basic/admin/views/payments/components/cc_processors/*
+
+!js/
+js/*
+
+!js/addons/
+js/addons/*
+
+!js/addons/everypay/
+!js/addons/everypay/**
+
+!.gitignore
+!README.md
