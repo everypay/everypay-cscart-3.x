@@ -1,11 +1,11 @@
 var EPBUTTON, $EVERYPAYFORM, $EVERYPAYIFRAME;
-(function (_, $) {
+$( document ).ready(function() {
 
     function add_everypay_css() {
-        if (Tygh.$('#everypay-css').length) {
+        if ($('#everypay-css').length) {
             return;
         }
-        var my_css = '.payments-form .button-holder {display:none !important}';
+        var my_css = '.button-holder {display:none !important}';
         var head = document.head || document.getElementsByTagName('head')[0];
         var my_style = document.createElement('style');
         my_style.id = 'everypay-css';
@@ -23,8 +23,11 @@ var EPBUTTON, $EVERYPAYFORM, $EVERYPAYIFRAME;
         add_everypay_scripts();
         add_everypay_css();
 
-        $EVERYPAYFORM = jQuery('.payments-form:visible');
-        $EVERYPAYIFRAME = $EVERYPAYFORM.find("iframe[id^='order_iframe']");        
+        $EVERYPAYFORM = jQuery('#step_four_body form:visible');
+        
+        console.log($EVERYPAYFORM);
+        
+        $EVERYPAYIFRAME = $EVERYPAYFORM.find(".payment-method-iframe-box iframe");        
         $EVERYPAYFORM.append('<input type="hidden" value="1" name="dispatch[checkout.place_order]">');
 
         var loadButton = setInterval(function () {
@@ -41,7 +44,7 @@ var EPBUTTON, $EVERYPAYFORM, $EVERYPAYIFRAME;
     }
 
     function add_everypay_scripts() {
-        if (Tygh.$('#everypay-javascript').length) {
+        if ($('#everypay-javascript').length) {
             return;
         }
         var head = document.head || document.getElementsByTagName('head')[0];
@@ -53,7 +56,7 @@ var EPBUTTON, $EVERYPAYFORM, $EVERYPAYIFRAME;
     }
 
     init_button(EVERYPAY_DATA);
-}(Tygh, Tygh.$));
+});
 
 function handleToken(message){
     var loadtext = 'Γίνεται αποστολή. Παρακαλούμε περιμένετε...';

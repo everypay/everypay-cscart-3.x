@@ -2,7 +2,7 @@
 *.*
 *
 
-#exclude directory structure
+#BASE FOLDER
 !addons/
 addons/*
 
@@ -13,12 +13,14 @@ addons/*
 !payments/everypay.php
 payments/*
 
+##
 !skins/
 skins/*
 
 !skins/basic/
 skins/basic/*
 
+##
 !skins/basic/admin/
 skins/basic/admin/*
 
@@ -29,6 +31,7 @@ skins/basic/admin/addons/*
 !skins/basic/admin/addons/everypay/**
 
 
+#THE ADMIN SETTINGS TAB
 !skins/basic/admin/views/
 skins/basic/admin/views/*
 
@@ -41,6 +44,23 @@ skins/basic/admin/views/payments/components/*
 !skins/basic/admin/views/payments/components/cc_processors/
 !skins/basic/admin/views/payments/components/cc_processors/everypay.tpl
 skins/basic/admin/views/payments/components/cc_processors/*
+
+#CUSTOMER VIEW
+!skins/basic/customer/
+skins/basic/customer/*
+
+!skins/basic/customer/views/
+skins/basic/customer/views/*
+
+!skins/basic/customer/views/orders/
+skins/basic/customer/views/orders/*
+
+!skins/basic/customer/views/orders/components/
+skins/basic/customer/views/orders/components/*
+
+!skins/basic/customer/views/orders/components/payments/
+!skins/basic/customer/views/orders/components/payments/everypay.tpl
+
 
 !js/
 js/*
