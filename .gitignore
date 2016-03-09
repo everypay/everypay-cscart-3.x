@@ -30,7 +30,6 @@ skins/basic/admin/addons/*
 !skins/basic/admin/addons/everypay/
 !skins/basic/admin/addons/everypay/**
 
-
 #THE ADMIN SETTINGS TAB
 !skins/basic/admin/views/
 skins/basic/admin/views/*
@@ -42,8 +41,9 @@ skins/basic/admin/views/payments/*
 skins/basic/admin/views/payments/components/*
 
 !skins/basic/admin/views/payments/components/cc_processors/
-!skins/basic/admin/views/payments/components/cc_processors/everypay.tpl
 skins/basic/admin/views/payments/components/cc_processors/*
+!skins/basic/admin/views/payments/components/cc_processors/everypay.tpl
+
 
 #CUSTOMER VIEW
 !skins/basic/customer/
