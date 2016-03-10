@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<addon scheme="2.0" edition_type="ROOT,ULT:VENDOR">
+<addon>
     <id>everypay</id>
     <version>1.0</version>
     <default_language>en</default_language>
@@ -10,13 +10,13 @@
     <description>Lets you accept card payments through Everypay gateway</description>
     <auto_install>PROFESSIONAL,MULTIVENDOR,ULTIMATE</auto_install>
     <translations>
-        <item for="name" lang="EN">Everypay - Debit/Credit card payments</item>
-        <item for="name" lang="EL">Everypay - Πληρωμές με πιστωτική/χρεωστική κάρτα</item>
+        <item for="name" lang="EN">Debit/Credit card payments - Everypay</item>
+        <item for="name" lang="EL">Πληρωμές με πιστωτική/χρεωστική κάρτα - Everypay</item>
     </translations>
     <queries>
         <item for="install">REPLACE INTO ?:payment_processors (
             `processor`,`processor_script`,`processor_template`, `admin_template`,`callback`,`type`) 
-            VALUES ('Everypay','everypay.php', 'everypay.tpl','everypay.tpl', 'Y', 'P');
+            VALUES ('Everypay','everypay.php', 'cc_outside.tpl', 'everypay.tpl', 'Y', 'P');
         </item>
         <item for="uninstall">DELETE FROM ?:payment_processors WHERE `processor` = 'Everypay'</item>
     </queries>
@@ -25,22 +25,21 @@
         <item lang="EN" id="secret_key">Private Key</item>
         <item lang="EN" id="test_mode">Test Mode</item>
         <item lang="EN" id="text_evp_failed_order">No response from Everypay has been received. Please contact the store staff and tell them the order ID:</item>
-        <item lang="EN" id="text_evp_pending">Payment failed! Please check EveryPay dashboard using Payment Token</item>
+        <item lang="EN" id="text_evp_pending">Payment failed! Please check EveryPay dashboard using Payment Token:</item>
         <item lang="EN" id="text_evp_success">Payment Sucessful. You can check the payment under Payments on Everypay dashboard.</item>
-        <item lang="EN" id="From (€)">From (€)</item>
-        <item lang="EN" id="To (€)">To (€)</item>
+        <item lang="EN" id="from_euro">From (€)</item>
+        <item lang="EN" id="to_euro">To (€)</item>
         <item lang="EN" id="installments">Installments</item>
         <item lang="EN" id="add">Add</item>
         <item lang="EN" id="ttc_installments_everypay">Choose max installments number, according to the total amount of the order</item>
-        
         <item lang="EL" id="public_key">Δημόσιο Κλειδί</item>
         <item lang="EL" id="secret_key">Ιδιωτικό Κλειδί</item>
         <item lang="EL" id="test_mode">Δοκιμαστική Λειτουργία</item>
         <item lang="EL" id="text_evp_failed_order">Καμία απάντηση από την Everypay. Παρακαλώ επικοινωνήστε με τα κεντρικά γραφεία της εταιρείας και δώστε τους τον κωδικό παραγγελίας: </item>
         <item lang="EL" id="text_evp_pending">Η συναλλαγή απέτυχε! Παρακαλούμε βεβαιωθείτε οτι τα στοιχεία της κάρτας είναι σωστά και οτι η κάρτα αυτή έχει επαρκές υπόλοιπο.</item>
         <item lang="EL" id="text_evp_success">Επιτυχής πληρωμή. Μπορείτε να ελέγξτε την πληρωμή στον λογαριαμό σας στο Everypay dashboard.</item>
-        <item lang="EL" id="From (€)">Από (€)</item>
-        <item lang="EL" id="To (€)">Εως (€)</item>
+        <item lang="EL" id="from_euro">Από (€)</item>
+        <item lang="EL" id="to_euro">Εως (€)</item>
         <item lang="EL" id="installments">Δόσεις</item>
         <item lang="EL" id="add">Προσθήκη</item>
         <item lang="EL" id="ttc_installments_everypay">Επιλέξτε το πλήθος μέγιστων δόσεων, ανάλογα με το ύψος της παραγγελίας</item>

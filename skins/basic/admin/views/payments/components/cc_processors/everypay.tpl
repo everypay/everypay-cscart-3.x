@@ -35,8 +35,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>{$lang.From (€)}</th>
-                <th>{$lang.To (€)}</th>
+                <th>{$lang.from_euro}</th>
+                <th>{$lang.to_euro}</th>
                 <th>{$lang.installments}</th>
                 <th>
                     <a class="btn btn-default" href="#" id="add-installment" style="width:101px;">                        
