@@ -9,6 +9,10 @@ addons/*
 !addons/everypay/
 !addons/everypay/**
 
+!addons/everypay/controllers/
+!addons/everypay/controllers/common/
+!addons/everypay/controllers/common/lib.php
+
 !payments/
 !payments/everypay.php
 
