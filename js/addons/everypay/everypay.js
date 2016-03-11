@@ -23,10 +23,7 @@ $( document ).ready(function() {
         add_everypay_scripts();
         add_everypay_css();
 
-        $EVERYPAYFORM = jQuery('#step_four_body form:visible');
-        
-        console.log($EVERYPAYFORM);
-        
+        $EVERYPAYFORM = jQuery('#step_four_body form:visible');        
         $EVERYPAYIFRAME = $EVERYPAYFORM.find(".payment-method-iframe-box iframe");        
         $EVERYPAYFORM.append('<input type="hidden" value="1" name="dispatch[checkout.place_order]">');
 
