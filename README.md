@@ -21,12 +21,14 @@ Now the addon show be active. If not activate it manually.
 2. Click the "+" to add a new payment method.
 3. Choose EveryPay from the list and choose "cc_outside.tpl" in the template filed
 4. Fill in these values according to the language: 
-    -- ####Ελληνικά:
-    -- Τίτλος: Χρεωστική / Πιστωτική κάρτα
-    -- Περιγραφή: Μέσω του ασφαλούς συστήματος της EveryPay
-    -- ####English:
-    -- Title: Credit / Debit Card
-    -- Description: Through safe Everypay  gateway
+<dl>
+    <dt>Ελληνικά</dt>
+    <dd>Τίτλος: Χρεωστική / Πιστωτική κάρτα</dd>
+    <dd>Περιγραφή: Μέσω του ασφαλούς συστήματος της EveryPay</dd>
+    <dt>English</dt>
+    <dd>Title: Credit / Debit Card</dd>
+    <dd>Description: Through safe Everypay  gateway</dd>
+</dl>
 5. Click the 'Configure' tab.
 6. Enter your Public Key, Private Key, and choose the test mode (Test or not). You can find these in your settings menu (https://dashboard.everypay.gr/settings/api-keys)
 7. Enter your desired installment ranges, e.g. [0->100:2 installments], [100->500 : 5 installments], etc.
