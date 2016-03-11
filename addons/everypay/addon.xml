@@ -13,13 +13,13 @@
         <item for="name" lang="EN">Debit/Credit card payments - Everypay</item>
         <item for="name" lang="EL">Πληρωμές με πιστωτική/χρεωστική κάρτα - Everypay</item>
     </translations>
-    <queries>
+    <opt_queries>
         <item for="install">REPLACE INTO ?:payment_processors (
             `processor`,`processor_script`,`processor_template`, `admin_template`,`callback`,`type`) 
             VALUES ('Everypay','everypay.php', 'cc_outside.tpl', 'everypay.tpl', 'Y', 'P');
         </item>
         <item for="uninstall">DELETE FROM ?:payment_processors WHERE `processor` = 'Everypay'</item>
-    </queries>
+    </opt_queries>
     <opt_language_variables>
         <item lang="EN" id="public_key">Public Key</item>
         <item lang="EN" id="secret_key">Private Key</item>
