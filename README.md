@@ -6,10 +6,10 @@ Allows you to use EveryPay payment gateway with the CS Cart Store.
 This is the EveryPay payment gateway plugin for CS Cart. Allows merchants to accept credit cards, debit cards with the CS Cart store. It uses a seamless integration, allowing the customer to pay on your website without being redirected away from your CS Cart website.
 
 ## Installation
-1. Ensure you have latest version of CS Cart installed.
+1. Ensure you have version 3.x of CS Cart installed.
 2. Download the zip of this repository (https://github.com/everypay/everypay-cscart-3/archive/master.zip).
 3. Extract to a local folder
-4. Go inside the extraction folder and add folders app, design and js in a new zip file called everypay.zip or something similar
+4. Upload all the extracted folders (addons,js,payments,skins) in your shop's base folder (they will be merged)
 5. Navigate to CS cart admin menu Addons > Manage Addons.
 6. Choose add new addon and upload the zip file
 
