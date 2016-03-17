@@ -40,7 +40,7 @@
                 <th>{$lang.installments}</th>
                 <th>
                     <a class="btn btn-default" href="#" id="add-installment" style="width:101px;">                        
-                        <i class="icon icon-plus-sign"></i> {$lang.add}
+                        {$lang.add}
                     </a>
                 </th>
             </tr>
@@ -66,7 +66,7 @@
                 + "<td><input type=\"number\" step=\"0.01\" min=\"0\" name=\"amount_{{id}}_from\" value=\"{{from}}\" class=\"form-control\" /></td>"
                 + "<td><input type=\"number\" step=\"0.01\" min=\"0\" name=\"amount_{{id}}_to\" value=\"{{to}}\" class=\"form-control\" /></td>"
                 + "<td><input type=\"number\" step=\"1\" max=\"72\" min=\"0\" name=\"max_{{id}}\" value=\"{{max}}\" class=\"form-control\" /></td>"
-                + "<td><a class=\"btn btn-danger remove-installment\" href=\"#\"><i class=\"icon-trash\"></i></a></td>"
+                + "<td><a class=\"btn btn-danger remove-installment\" href=\"#\">{/literal}{$lang.delete}{literal}</a></td>"
                 + "</tr>";
 
         var loadButton = setInterval(function () {
@@ -112,9 +112,9 @@
                 });
                 clearInterval(loadButton);
             } catch (err) {
-                //console.log(err);
+                console.log(err);
             }
-        }, 500);
+        }, 1000);
 
         var addInstallment = function (row) {
             var element = {

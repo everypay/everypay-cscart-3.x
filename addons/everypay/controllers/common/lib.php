@@ -37,6 +37,9 @@ function fn_everypay_button()
 {
     $cart = & $_SESSION['cart'];
     $payment_id = $cart['payment_id'];
+    $transBtn = array(
+        'el' => 'Πληρωμή με κάρτα', 
+        'en' => 'Pay with card');
     
     if (!isset($_GET['dispatch']) || $_GET['dispatch'] != 'checkout.process_payment') {
         return;
@@ -51,26 +54,22 @@ function fn_everypay_button()
     
     $amount = fn_everypay_convert_amount($cart['total'] + $cart['payment_surcharge'], CART_PRIMARY_CURRENCY, $processor_data['currency']);
 
-    $lang = strtolower(CART_LANGUAGE);
+    $lang = (strtolower(CART_LANGUAGE) == 'el') ? 'el' : 'en';
     
     $jsonInit = array(
-        'amount' => intval(strval($amount['price'] * 100)),
-        'currency' => $processor_data['currency'],
-        'key' => $processor_data['public_key'],
-        'locale' => $lang == 'el' ? $lang : 'en',
-        'sandbox' => $processor_data['test_mode'],
-        'callback' => 'handleToken'
+        'amount'    => intval(strval($amount['price'] * 100)),
+        'currency'  => $processor_data['currency'],
+        'key'       => $processor_data['public_key'],
+        'locale'    => $lang,
+        'sandbox'   => $processor_data['test_mode'],
+        'callback'  => 'handleToken'
     );
 
-    $max_installments = fn_everypay_get_installments($amount['price'], $cart['payment_method_data']['params']['everypay_installments']);
+    $max_installments = fn_everypay_get_installments($amount['price'], $processor_data['everypay_installments']);
 
     $jsonInit['max_installments'] = $max_installments ? : 0;
     $time = time();
-
-    $btn_text = 'Πληρωμή με κάρτα';
-    if ($lang != 'el') {
-        $btn_text = 'Pay with card';
-    }
+    
     //ouput
     ?>
     <html>
@@ -112,7 +111,7 @@ function fn_everypay_button()
         </head>
         <body>
             <div style="text-align:center">
-                <button onclick="trigger_button();" class="everypay-button"><?php echo $btn_text ?></button>
+                <button onclick="trigger_button();" class="everypay-button"><?php echo $transBtn[$lang] ?></button>
             </div>
         </body>
     </html>
